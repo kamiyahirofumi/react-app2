@@ -3,10 +3,8 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { Omikuji } from "./pages/Omikuji";
 import { Janken } from "./pages/Janken";
-import { BookCreate } from "./pages/BookCreate";
 // 🔽 追加
-import { NHK } from "./pages/NHK";
-
+import { BookCreate } from "./pages/BookCreate";
 
 const App = () => {
   return (
@@ -19,21 +17,17 @@ const App = () => {
         <li>
           <Link to="/janken">じゃんけん</Link>
         </li>
+        {/* 🔽 追加 */}
         <li>
           <Link to="/book-create">投稿する</Link>
-        </li>
-         {/* 🔽 追加 */}
-        <li>
-          <Link to="/NHK">ホテルを検索する</Link>
         </li>
       </ul>
       <hr />
       <Routes>
         <Route path="/omikuji" element={<Omikuji />} />
         <Route path="/janken" element={<Janken />} />
+        {/* 🔽 追加 */}
         <Route path="/book-create" element={<BookCreate />} />
-         {/* 🔽 追加 */}
-        <Route path="/NHK" element={<NHK />} />
       </Routes>
     </BrowserRouter>
   );
